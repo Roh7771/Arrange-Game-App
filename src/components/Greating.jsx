@@ -13,16 +13,20 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  @media (max-width: 520px) {
+    width: 75vw;
+  }
 `;
 
 const Title = styled.h1`
   text-transform: uppercase;
   font-weight: bold;
-`
+  text-align: center;
+`;
 
 const Text = styled.h2`
   text-align: center;
-  margin-top: 20px
+  margin-top: 20px;
 `;
 
 const Select = styled.select`
@@ -116,7 +120,9 @@ const StartButton = styled.button`
   }
 `;
 
-function Greating({ inputValue, onInputChange, onStart, isFinished }) {
+function Greating({
+  inputValue, onInputChange, onStart, isFinished,
+}) {
   return (
     <Container>
       <Title>{isFinished ? 'WINNER!!!' : 'Arrange Game'}</Title>
@@ -133,11 +139,12 @@ function Greating({ inputValue, onInputChange, onStart, isFinished }) {
   );
 }
 
-// ExampleComponent.propTypes = {
-//   property1: PropTypes.arrayOf(PropTypes.object).isRequired,
-//   property2: PropTypes.number.isRequired,
-//   property3: PropTypes.func.isRequired,
-// }
+Greating.propTypes = {
+  inputValue: PropTypes.string.isRequired,
+  onInputChange: PropTypes.func.isRequired,
+  onStart: PropTypes.func.isRequired,
+  isFinished: PropTypes.bool.isRequired,
+};
 
 function mapStateToProps(state) {
   return {

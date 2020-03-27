@@ -42,7 +42,8 @@
       "space-before-function-paren": [
         "error",
         "never"
-      ]
+      ],
+      "no-case-declarations": 0
     }
   },
   "prettier": {

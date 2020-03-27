@@ -33,9 +33,9 @@ export default function(state = initialState, action) {
         modifiedField[action.payload] = null;
       }
       if (
-        !modifiedField[modifiedField.length - 1] &&
-        JSON.stringify(modifiedField) ===
-          JSON.stringify(state.correctCellsArray)
+        !modifiedField[modifiedField.length - 1]
+        && JSON.stringify(modifiedField)
+          === JSON.stringify(state.correctCellsArray)
       ) {
         return {
           ...state,
